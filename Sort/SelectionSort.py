@@ -1,12 +1,12 @@
-def SelectionSort(arr, n): # arr: array, n: size of arr
-    for i in range(n-1, 0, -1):
-        largest = theLargest(arr, i) # largest number's index
-        arr[i], arr[largest] = arr[largest], arr[i]
+def SelectionSort(arr, n): # arr: 무작위 배열, n: 배열의 길이
+    for i in range(n-1, 0, -1): # n번째부터 2번째까지(index상으로 n-1부터 1까지)
+        largest = theLargest(arr, i) # 가장 큰 값을 가지고 있는 배열의 index반환
+        arr[i], arr[largest] = arr[largest], arr[i] #가장 큰 값을 맨 뒤로 보냄
     return arr
 
-def theLargest(arr, last): # return largest number's index
-    largest = 0
-    for i in range(last+1): # 0~(last-1)+1
+def theLargest(arr, last): # 가장 큰 값을 가지고 있는 배열의 index반환
+    largest = 0 # 맨 앞의 인덱스
+    for i in range(last+1): # 첫 번째부터 last까지(index상으로 0부터 last-1까지)
         if(arr[i]>arr[largest]):
             largest = i
     return largest
